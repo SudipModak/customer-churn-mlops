@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-from churn.utils.common import read_yaml
+from churn.utils.common import read_yaml,create_directories
 from churn.entity.config_entity import(
     DataIngestionConfig,
     DataValidationConfig
@@ -17,6 +17,7 @@ class ConfigurationManager:
     def get_data_ingestion_config(self):
 
         config=self.config["data_ingestion"]
+        create_directories([config["root_dir"]])
 
         return DataIngestionConfig(
             root_dir=Path(config["root_dir"]),
@@ -26,7 +27,11 @@ class ConfigurationManager:
     def get_data_validation_config(self):
         config=self.config["data_validation"]
 
+        create_directories([config["root_dir"]])
+
         return DataValidationConfig(
             root_dir=Path(config["root_dir"]),
             status_file=Path(config["status_file"])
         )
+    
+    

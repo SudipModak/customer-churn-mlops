@@ -5,6 +5,7 @@ matplotlib
 seaborn
 jupyter
 ipykernel
+openpyxl
 
 PyYAML
 python-dotenv
