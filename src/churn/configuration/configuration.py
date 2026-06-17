@@ -6,7 +6,11 @@ from churn.entity.config_entity import(
     DataIngestionConfig,
     DataValidationConfig
 )
-
+from churn.entity.config_entity import (
+    DataIngestionConfig,
+    DataValidationConfig,
+    DataTransformationConfig
+)
 class ConfigurationManager:
 
     def __init__(self,
@@ -34,4 +38,15 @@ class ConfigurationManager:
             status_file=Path(config["status_file"])
         )
     
-    
+    def get_data_transformation_config(self):
+
+        config = self.config["data_transformation"]
+
+        create_directories([config["root_dir"]])
+
+        return DataTransformationConfig(
+            root_dir=Path(config["root_dir"]),
+            transformed_train_path=Path(config["transformed_train_path"]),
+            transformed_test_path=Path(config["transformed_test_path"]),
+            preprocessor_path=Path(config["preprocessor_path"])
+        )
