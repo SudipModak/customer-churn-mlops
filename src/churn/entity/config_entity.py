@@ -18,3 +18,10 @@ class DataTransformationConfig:
     transformed_train_path: Path
     transformed_test_path: Path
     preprocessor_path: Path
+
+@dataclass(frozen=True)
+class MySQLConfig:
+    host: str
+    user: str
+    password: str
+    database: str

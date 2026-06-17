@@ -2,7 +2,7 @@ import pickle
 from pathlib import Path
 
 def save_object(file_path, obj):
-    Path(file_path,obj).parent.mkdir(
+    Path(file_path).parent.mkdir(
         parents=True,
         exist_ok=True
     )

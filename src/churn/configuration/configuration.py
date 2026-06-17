@@ -9,7 +9,8 @@ from churn.entity.config_entity import(
 from churn.entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
-    DataTransformationConfig
+    DataTransformationConfig,
+    MySQLConfig
 )
 class ConfigurationManager:
 
@@ -49,4 +50,14 @@ class ConfigurationManager:
             transformed_train_path=Path(config["transformed_train_path"]),
             transformed_test_path=Path(config["transformed_test_path"]),
             preprocessor_path=Path(config["preprocessor_path"])
+        )
+    
+    def get_mysql_config(self):
+        config=self.config["mysql"]
+
+        return MySQLConfig(
+            host=config["host"],
+            user=config["user"],
+            password=config["password"],
+            database=config["database"]
         )

@@ -14,6 +14,9 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+from sqlalchemy import create_engine
+from urllib.parse import quote_plus
+from churn.configuration.configuration import ConfigurationManager
 
 
 class DataTransformation:
@@ -33,26 +36,45 @@ class DataTransformation:
             if not self.data_validation_artifact.validation_status:
                 raise Exception("Data Validation failed,Transformaton cannot proceed")
             
-            logger.info("Validation successful")
+            logger.info("Reading dataset from MySQL")
 
-            logger.info("Reading dataset")
+            config = ConfigurationManager()
 
-            df = pd.read_excel(
-    self.data_validation_artifact.valid_data_path
+            mysql_config = config.get_mysql_config()
+
+            password = quote_plus(mysql_config.password)
+
+            engine = create_engine(
+                f"mysql+pymysql://{mysql_config.user}:"
+                f"{password}@"
+                f"{mysql_config.host}:3306/"
+                f"{mysql_config.database}"
+            )
+
+            df = pd.read_sql(
+                "SELECT * FROM customer_churn_raw",
+                con=engine
+            )
+
+            logger.info(f"Dataset loaded successfully from MySQL. Shape: {df.shape}")
+            df["Total Charges"]=pd.to_numeric(df["Total Charges"],errors="coerce")
+            df["Zip Code"] = pd.to_numeric(
+    df["Zip Code"],
+    errors="coerce"
 )
-            logger.info("Dataset loaded successfully")
 
             target_column = "Churn Value"
 
             drop_columns = [
-                "CustomerID",
-                "Country",
-                "State",
-                "City",
-                "Lat Long",
-                "Churn Label",
-                "Churn Reason"
-            ]
+    "CustomerID",
+    "Country",
+    "State",
+    "City",
+    "Lat Long",
+    "Churn Label",
+    "Churn Reason"
+    
+]
 
             X=df.drop(columns=[target_column]+drop_columns,axis=1)
             y=df[target_column]
@@ -122,8 +144,7 @@ class DataTransformation:
                 "Tenure Months",
                 "Monthly Charges",
                 "Total Charges",
-                "Churn Score",
-                "CLTV"]
+                ]
             categorical_columns = ["Gender",
                     "Senior Citizen",
                     "Partner",
