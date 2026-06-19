@@ -25,3 +25,8 @@ class MySQLConfig:
     user: str
     password: str
     database: str
+
+@dataclass(frozen=True)
+class ModelTrainerConfig:
+    root_dir: Path
+    trained_model_path: Path

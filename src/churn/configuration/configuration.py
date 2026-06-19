@@ -1,10 +1,12 @@
 from pathlib import Path
 
 
+
 from churn.utils.common import read_yaml,create_directories
 from churn.entity.config_entity import(
     DataIngestionConfig,
-    DataValidationConfig
+    DataValidationConfig,
+    ModelTrainerConfig
 )
 from churn.entity.config_entity import (
     DataIngestionConfig,
@@ -60,4 +62,15 @@ class ConfigurationManager:
             user=config["user"],
             password=config["password"],
             database=config["database"]
+        )
+    
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+
+        config = self.config["model_trainer"]
+
+        create_directories([config["root_dir"]])
+
+        return ModelTrainerConfig(
+            root_dir=Path(config["root_dir"]),
+            trained_model_path=Path(config["trained_model_path"])
         )

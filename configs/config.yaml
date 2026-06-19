@@ -19,3 +19,12 @@ mysql:
   user: root
   password: Sudip@2003
   database: churn_db
+
+model_trainer:
+  root_dir: artifacts/model_trainer
+  trained_model_path: artifacts/model_trainer/model.pkl
+
+models:
+  logistic regression: true
+  random_forest: true
+  xgboost: true
