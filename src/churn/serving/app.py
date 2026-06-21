@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from churn.serving.routes import router
+from src.churn.serving.routes import router
 
 app = FastAPI(
     title="Customer Churn Prediction API",

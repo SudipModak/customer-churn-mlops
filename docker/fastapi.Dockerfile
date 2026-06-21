@@ -5,8 +5,9 @@ WORKDIR /app
 COPY . .
 
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+
+RUN pip install --no-cache-dir --default-timeout=1000 -r requirements.txt
 
 EXPOSE 8000
 
-CMD ["uvicorn","src.churn,serving.app:app","--host","0.0.0.0","-port","8000"]
+CMD ["uvicorn","src.churn.serving.app:app","--host","0.0.0.0","--port","8000"]

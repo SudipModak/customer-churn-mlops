@@ -3,14 +3,14 @@ import pandas as pd
 from io import BytesIO
 import uuid
 import os
-from churn.serving.services import predict_dataframe
+from src.churn.serving.services import predict_dataframe
 from fastapi.responses import FileResponse
 
-from churn.serving.services import (
+from src.churn.serving.services import (
     predict_dataframe,
     generate_prediction_file
 )
-from churn.database.mysql_operations import (
+from src.churn.database.mysql_operations import (
     save_upload_history,
     save_customer_uploads,
     save_prediction_results

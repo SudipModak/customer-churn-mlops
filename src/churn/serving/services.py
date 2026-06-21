@@ -1,6 +1,6 @@
 import pandas as pd
 
-from churn.ml.prediction import PredictionPipeline
+from src.churn.ml.prediction import PredictionPipeline
 
 
 def predict_dataframe(df: pd.DataFrame):
