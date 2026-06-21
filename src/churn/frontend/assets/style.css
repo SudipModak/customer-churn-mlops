@@ -1,0 +1,33 @@
+.main {
+    background-color: #0E1117;
+}
+
+.metric-card {
+    background: linear-gradient(135deg,#1E293B,#0F172A);
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #00D4FF;
+}
+
+.metric-label {
+    color: white;
+    font-size: 16px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+}
+
+.hero-subtitle {
+    color: #B0BEC5;
+    font-size: 18px;
+}
