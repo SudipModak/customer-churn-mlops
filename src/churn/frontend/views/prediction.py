@@ -3,7 +3,7 @@ import requests
 import plotly.express as px
 import pandas as pd
 
-FASTAPI_URL = "http://127.0.0.1:8000"
+FASTAPI_URL = "http://fastapi:8000"
 
 def show_prediction_page():
 

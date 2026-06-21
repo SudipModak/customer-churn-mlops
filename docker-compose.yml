@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+
+  fastapi:
+    build:
+      context: .
+      dockerfile: docker/fastapi.Dockerfile
+
+    container_name: churn-fastapi
+
+    ports:
+      - "8000:8000"
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: docker/streamlit.Dockerfile
+
+    container_name: churn-streamlit
+
+    ports:
+      - "8501:8501"
+
+    depends_on:
+      - fastapi

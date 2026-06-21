@@ -7,7 +7,6 @@ COPY . .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-EXPOSE 8501
 EXPOSE 8000
 
-CMD ["streamlit","run","src/churn/frontend/app.py","--server.address=0.0.0.0"]
+CMD ["uvicorn","src.churn,serving.app:app","--host","0.0.0.0","-port","8000"]
