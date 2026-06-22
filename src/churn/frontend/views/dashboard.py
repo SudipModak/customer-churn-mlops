@@ -1,6 +1,6 @@
 import streamlit as st
 
-from churn.frontend.components.charts import (
+from src.churn.frontend.components.charts import (
     churn_donut,
     churn_gauge
 )

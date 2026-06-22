@@ -1,4 +1,4 @@
-from churn.utils.save_load import load_object
+from src.churn.utils.save_load import load_object
 import pandas as pd
 
 

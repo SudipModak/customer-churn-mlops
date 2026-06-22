@@ -13,12 +13,12 @@ classification_report
 )
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
-from churn.logger.logger import logger
-from churn.exception.exception import CustomException
-from churn.utils.save_load import save_object
+from src.churn.logger.logger import logger
+from src.churn.exception.exception import CustomException
+from src.churn.utils.save_load import save_object
 
-from churn.entity.config_entity import ModelTrainerConfig
-from churn.entity.artifact_entity import (
+from src.churn.entity.config_entity import ModelTrainerConfig
+from src.churn.entity.artifact_entity import (
 DataTransformationArtifact,
 ModelTrainerArtifact
 )

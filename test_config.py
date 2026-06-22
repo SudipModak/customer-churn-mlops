@@ -1,4 +1,4 @@
-from churn.configuration.configuration import ConfigurationManager
+from src.churn.configuration.configuration import ConfigurationManager
 
 config=ConfigurationManager()
 print(config.get_data_ingestion_config())

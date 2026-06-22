@@ -1,12 +1,12 @@
 
-from churn.pipeline.stage_05_model_evaluation import (
+from src.churn.pipeline.stage_05_model_evaluation import (
     ModelEvaluationTrainingPipeline
 )
-from churn.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
-from churn.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
-from churn.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
-from churn.pipeline.stage_04_model_trainer import(ModelTrainerTrainingPipeline)
-from churn.logger.logger import logging
+from src.churn.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
+from src.churn.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
+from src.churn.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
+from src.churn.pipeline.stage_04_model_trainer import(ModelTrainerTrainingPipeline)
+from src.churn.logger.logger import logging
 STAGE_NAME ="DATA INGESTION STAGE"
 
 if __name__ == "__main__":

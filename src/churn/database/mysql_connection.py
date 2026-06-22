@@ -1,7 +1,7 @@
 from mysql.connector import connect
 
-from churn.logger.logger import logging
-from churn.exception.exception import CustomException
+from src.churn.logger.logger import logging
+from src.churn.exception.exception import CustomException
 import sys
 
 def get_mysql_connection(

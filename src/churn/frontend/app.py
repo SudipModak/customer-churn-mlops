@@ -1,10 +1,10 @@
 import streamlit as st
-from churn.frontend.views.upload_history import (
+from src.churn.frontend.views.upload_history import (
     show_upload_history
 )
-from churn.frontend.components.sidebar import render_sidebar
-from churn.frontend.views.dashboard import show_dashboard
-from churn.frontend.views.prediction import show_prediction_page
+from src.churn.frontend.components.sidebar import render_sidebar
+from src.churn.frontend.views.dashboard import show_dashboard
+from src.churn.frontend.views.prediction import show_prediction_page
 
 st.set_page_config(
     page_title="Customer Churn Intelligence Platform",

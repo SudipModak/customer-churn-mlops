@@ -2,9 +2,9 @@ import pandas as pd
 import yaml
 import sys
 
-from churn.entity.config_entity import DataValidationConfig
-from churn.exception.exception import CustomException
-from churn.logger.logger import logging
+from src.churn.entity.config_entity import DataValidationConfig
+from src.churn.exception.exception import CustomException
+from src.churn.logger.logger import logging
 
 
 class DataValidation:

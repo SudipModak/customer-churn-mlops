@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from churn.configuration.configuration import ConfigurationManager
-from churn.components.data_transformation import DataTransformation
-from churn.entity.artifact_entity import DataValidationArtifact
+from src.churn.configuration.configuration import ConfigurationManager
+from src.churn.components.data_transformation import DataTransformation
+from src.churn.entity.artifact_entity import DataValidationArtifact
 
 
 class DataTransformationTrainingPipeline:

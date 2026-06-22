@@ -2,13 +2,13 @@ from pathlib import Path
 
 
 
-from churn.utils.common import read_yaml,create_directories
-from churn.entity.config_entity import(
+from src.churn.utils.common import read_yaml,create_directories
+from src.churn.entity.config_entity import(
     DataIngestionConfig,
     DataValidationConfig,
     ModelTrainerConfig
 )
-from churn.entity.config_entity import (
+from src.churn.entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
     DataTransformationConfig,

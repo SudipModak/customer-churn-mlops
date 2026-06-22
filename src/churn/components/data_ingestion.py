@@ -1,9 +1,9 @@
 
 import pandas as pd
 import openpyxl
-from churn.entity.config_entity import DataIngestionConfig
-from churn.logger.logger import logging
-from churn.exception.exception import CustomException
+from src.churn.entity.config_entity import DataIngestionConfig
+from src.churn.logger.logger import logging
+from src.churn.exception.exception import CustomException
 from sqlalchemy import create_engine
 from urllib.parse import quote_plus
 import sys

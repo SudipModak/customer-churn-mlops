@@ -4,9 +4,9 @@ import dagshub
 import sys
 from pathlib import Path
 
-from churn.logger.logger import logger
-from churn.exception.exception import CustomException
-from churn.entity.artifact_entity import ModelEvaluationArtifact
+from src.churn.logger.logger import logger
+from src.churn.exception.exception import CustomException
+from src.churn.entity.artifact_entity import ModelEvaluationArtifact
 
 class ModelEvaluation:
 

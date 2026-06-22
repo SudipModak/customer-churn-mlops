@@ -1,5 +1,5 @@
-from churn.configuration.configuration import ConfigurationManager
-from churn.components.data_validation import DataValidation
+from src.churn.configuration.configuration import ConfigurationManager
+from src.churn.components.data_validation import DataValidation
 
 class DataValidationTrainingPipeline:
     def __init__(self):

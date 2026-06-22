@@ -1,4 +1,4 @@
-from churn.components.model_evaluation import ModelEvaluation
+from src.churn.components.model_evaluation import ModelEvaluation
 
 
 class ModelEvaluationTrainingPipeline:

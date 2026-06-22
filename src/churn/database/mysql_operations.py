@@ -2,8 +2,8 @@ import pandas as pd
 import sys
 import json
 
-from churn.database.mysql_connection import get_mysql_connection
-from churn.exception.exception import CustomException
+from src.churn.database.mysql_connection import get_mysql_connection
+from src.churn.exception.exception import CustomException
 
 
 def read_table(

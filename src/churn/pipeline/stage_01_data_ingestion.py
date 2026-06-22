@@ -1,5 +1,5 @@
-from churn.configuration.configuration import ConfigurationManager
-from churn.components.data_ingestion import DataIngestion
+from src.churn.configuration.configuration import ConfigurationManager
+from src.churn.components.data_ingestion import DataIngestion
 
 
 class DataIngestionTrainingPipeline:

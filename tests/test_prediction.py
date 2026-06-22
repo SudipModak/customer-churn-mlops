@@ -1,6 +1,6 @@
 import pandas as pd
-from churn.ml.prediction import PredictionPipeline
-from churn.database.mysql_connection import get_mysql_connection
+from src.churn.ml.prediction import PredictionPipeline
+from src.churn.database.mysql_connection import get_mysql_connection
 
 
 conn= get_mysql_connection(

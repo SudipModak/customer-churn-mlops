@@ -1,13 +1,13 @@
 
-from churn.utils.save_load import save_object
-from churn.logger.logger import logger
-from churn.exception.exception import CustomException
+from src.churn.utils.save_load import save_object
+from src.churn.logger.logger import logger
+from src.churn.exception.exception import CustomException
 import sys
 from pathlib import Path
 import pandas as pd
 import numpy as np
-from churn.entity.config_entity import DataTransformationConfig
-from churn.entity.artifact_entity import(DataValidationArtifact,DataTransformationArtifact)
+from src.churn.entity.config_entity import DataTransformationConfig
+from src.churn.entity.artifact_entity import(DataValidationArtifact,DataTransformationArtifact)
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
@@ -16,7 +16,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sqlalchemy import create_engine
 from urllib.parse import quote_plus
-from churn.configuration.configuration import ConfigurationManager
+from src.churn.configuration.configuration import ConfigurationManager
 
 
 class DataTransformation:
