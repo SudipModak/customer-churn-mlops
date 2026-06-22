@@ -8,10 +8,10 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir --default-timeout=1000 -r requirements.txt
 
-# Baaki project files copy karo
+
 COPY . .
 
-# Install local package
+
 RUN pip install -e .
 
 ENV PYTHONPATH=/app
