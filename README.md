@@ -1,5 +1,7 @@
 # Customer Churn Prediction MLOps Project
 
+<img width="1912" height="917" alt="image" src="https://github.com/user-attachments/assets/98cc0529-70d3-406d-b0db-ad18635cf7b2" />
+
 ## Overview
 
 This project is an end-to-end Machine Learning Operations (MLOps) solution for predicting customer churn using the IBM Telco Customer Churn dataset.
