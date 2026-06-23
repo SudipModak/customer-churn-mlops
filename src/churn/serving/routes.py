@@ -32,75 +32,46 @@ async def predict(file: UploadFile = File(...)):
 
     customer_ids = df["CustomerID"].tolist()
 
-    # Save upload history
-    upload_id = save_upload_history(
-        host="localhost",
-        user="root",
-        password="Sudip@2003",
-        database="churn_db",
-        file_name=file.filename,
-        total_records=len(df)
-    )
+    upload_id = None
 
-    # Save raw uploaded data
-    save_customer_uploads(
-        host="localhost",
-        user="root",
-        password="Sudip@2003",
-        database="churn_db",
-        upload_id=upload_id,
-        df=df
-    )
+    try:
+        upload_id = save_upload_history(
+            host="localhost",
+            user="root",
+            password="Sudip@2003",
+            database="churn_db",
+            file_name=file.filename,
+            total_records=len(df)
+        )
 
-    # Run prediction
+        save_customer_uploads(
+            host="localhost",
+            user="root",
+            password="Sudip@2003",
+            database="churn_db",
+            upload_id=upload_id,
+            df=df
+        )
+
+    except Exception as e:
+        print(f"MySQL Error: {e}")
+
     predictions, summary = predict_dataframe(df)
 
-    # Save prediction results
-    save_prediction_results(
-        host="localhost",
-        user="root",
-        password="Sudip@2003",
-        database="churn_db",
-        upload_id=upload_id,
-        customer_ids=customer_ids,
-        predictions=predictions
-    )
+    try:
+        if upload_id:
+            save_prediction_results(
+                host="localhost",
+                user="root",
+                password="Sudip@2003",
+                database="churn_db",
+                upload_id=upload_id,
+                customer_ids=customer_ids,
+                predictions=predictions
+            )
+    except Exception as e:
+        print(f"MySQL Error: {e}")
 
-    
     summary["upload_id"] = upload_id
 
     return summary
-
-@router.post("/download_predictions")
-async def download_predictions(
-    file: UploadFile = File(...)
-):
-
-    contents = await file.read()
-
-    df = pd.read_excel(
-        BytesIO(contents)
-    )
-
-    result_df = generate_prediction_file(df)
-
-    os.makedirs(
-        "artifacts/predictions",
-        exist_ok=True
-    )
-
-    output_file = (
-        f"artifacts/predictions/"
-        f"prediction_{uuid.uuid4().hex}.xlsx"
-    )
-
-    result_df.to_excel(
-        output_file,
-        index=False
-    )
-
-    return FileResponse(
-        path=output_file,
-        filename="prediction_results.xlsx",
-        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    )
