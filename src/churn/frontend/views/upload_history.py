@@ -8,9 +8,11 @@ def show_upload_history():
 
     try:
 
+        
         engine = create_engine(
-            "mysql+pymysql://root:Sudip%402003@localhost:3306/churn_db"
-        )
+    "mysql+pymysql://root:Sudip@2003@mysql:3306/churn_db"
+)
+        
 
         df = pd.read_sql(
             """
