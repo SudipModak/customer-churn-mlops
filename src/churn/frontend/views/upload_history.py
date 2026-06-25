@@ -10,7 +10,7 @@ def show_upload_history():
 
         
         engine = create_engine(
-    "mysql+pymysql://root:Sudip@2003@mysql:3306/churn_db"
+    "mysql+pymysql://root:Sudip%402003@mysql:3306/churn_db"
 )
         
 
