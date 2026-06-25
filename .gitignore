@@ -218,6 +218,6 @@ __marimo__/
 .streamlit/secrets.toml
 
 .env
-artifacts/
+
 __pycache__/
 *.pyc
