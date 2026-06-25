@@ -24,3 +24,19 @@ services:
 
     depends_on:
       - fastapi
+
+
+
+  mysql:
+    image: mysql:8.0
+
+    container_name: churn-mysql
+
+    environment:
+      MYSQL_ROOT_PASSWORD: Sudip@2003
+      MYSQL_DATABASE: churn_db
+
+    ports:
+      - "3306:3306"
+
+  

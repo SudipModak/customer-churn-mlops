@@ -36,7 +36,7 @@ async def predict(file: UploadFile = File(...)):
 
     try:
         upload_id = save_upload_history(
-            host="localhost",
+            host="mysql",
             user="root",
             password="Sudip@2003",
             database="churn_db",
@@ -45,7 +45,7 @@ async def predict(file: UploadFile = File(...)):
         )
 
         save_customer_uploads(
-            host="localhost",
+            host="mysql",
             user="root",
             password="Sudip@2003",
             database="churn_db",
@@ -61,7 +61,7 @@ async def predict(file: UploadFile = File(...)):
     try:
         if upload_id:
             save_prediction_results(
-                host="localhost",
+                host="mysql",
                 user="root",
                 password="Sudip@2003",
                 database="churn_db",
