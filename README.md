@@ -1,258 +1,269 @@
-# Customer Churn Prediction MLOps Project
+<img width="1907" height="912" alt="image" src="https://github.com/user-attachments/assets/67a6a2aa-469b-4200-84f8-48c5bb4c02e4" />
+<img width="1906" height="912" alt="image" src="https://github.com/user-attachments/assets/8823de50-d3f0-4abb-9f57-8eceaa85933f" />
 
-<img width="1912" height="917" alt="image" src="https://github.com/user-attachments/assets/98cc0529-70d3-406d-b0db-ad18635cf7b2" />
 
-## Overview
+# 🚀 Customer Churn Prediction MLOps
 
-This project is an end-to-end Machine Learning Operations (MLOps) solution for predicting customer churn using the IBM Telco Customer Churn dataset.
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange?logo=scikitlearn)
+![XGBoost](https://img.shields.io/badge/XGBoost-Gradient%20Boosting-green)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas)
+![NumPy](https://img.shields.io/badge/NumPy-Scientific%20Computing-013243?logo=numpy)
 
-The project covers the complete ML lifecycle including data ingestion, validation, transformation, model training, experiment tracking, containerization, CI/CD automation, and cloud deployment on AWS EC2.
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi)
+![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-FF4B4B?logo=streamlit)
+![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?logo=mysql)
+
+![MLflow](https://img.shields.io/badge/MLflow-Experiment%20Tracking-0194E2?logo=mlflow)
+![DagsHub](https://img.shields.io/badge/DagsHub-Versioning-4A4A4A)
+
+![Docker](https://img.shields.io/badge/Docker-Containerization-2496ED?logo=docker)
+![Docker Compose](https://img.shields.io/badge/Docker%20Compose-Orchestration-2496ED?logo=docker)
+
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?logo=githubactions)
+![AWS EC2](https://img.shields.io/badge/AWS-EC2-FF9900?logo=amazonaws)
+
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![License](https://img.shields.io/badge/License-MIT-success)
 
 ---
 
-## Business Problem
+## 📖 Overview
 
-Customer churn directly impacts business revenue and customer retention strategies.
+Customer Churn Prediction MLOps is a production-ready end-to-end Machine Learning Operations project that predicts customer churn using the **IBM Telco Customer Churn** dataset.
 
-The objective of this project is to predict whether a customer is likely to leave a telecom service provider based on customer demographics, account information, and service usage patterns.
+The project demonstrates the complete lifecycle of a machine learning application—from data ingestion and preprocessing to model training, experiment tracking, API development, containerization, CI/CD automation, and cloud deployment on AWS.
+
+It follows software engineering and MLOps best practices, making it suitable for real-world deployment.
 
 ---
 
-## Project Architecture
+## 🎯 Business Problem
+
+Customer churn directly affects business revenue and long-term customer retention.
+
+By identifying customers who are likely to leave, organizations can take proactive actions such as personalized offers, targeted marketing campaigns, and improved customer support to reduce churn and increase customer lifetime value.
+
+This project builds a machine learning solution capable of predicting customer churn based on customer demographics, account information, and service usage patterns.
+
+---
+
+# 🏗️ Project Architecture
 
 ```text
-Customer Data
-      │
-      ▼
-Data Ingestion
-      │
-      ▼
-Data Validation
-      │
-      ▼
-Data Transformation
-      │
-      ▼
-Model Training
-      │
-      ▼
-Model Evaluation
-      │
-      ▼
-MLflow + DagsHub Tracking
-      │
-      ▼
-FastAPI Backend
-      │
-      ▼
-Streamlit Frontend
-      │
-      ▼
-Docker Containers
-      │
-      ▼
-GitHub Actions CI/CD
-      │
-      ▼
-AWS EC2 Deployment
+                      Customer Dataset
+                              │
+                              ▼
+                    Data Ingestion Pipeline
+                              │
+                              ▼
+                     Data Validation Pipeline
+                              │
+                              ▼
+                  Data Transformation Pipeline
+                              │
+                              ▼
+                      Model Training Pipeline
+                              │
+                              ▼
+                      Model Evaluation
+                              │
+                              ▼
+                  MLflow + DagsHub Tracking
+                              │
+                              ▼
+                         FastAPI Backend
+                              │
+                              ▼
+                     Streamlit Frontend
+                              │
+                              ▼
+                  Docker & Docker Compose
+                              │
+                              ▼
+                 GitHub Actions CI/CD Pipeline
+                              │
+                              ▼
+                     AWS EC2 Cloud Deployment
 ```
 
 ---
 
-## Tech Stack
+# 🛠️ Tech Stack
 
-### Programming
-
-* Python
-
-### Machine Learning
-
-* Scikit-Learn
-* XGBoost
-
-### Data Processing
-
-* Pandas
-* NumPy
-
-### Database
-
-* MySQL
-
-### Experiment Tracking
-
-* MLflow
-* DagsHub
-
-### API Development
-
-* FastAPI
-
-### Frontend
-
-* Streamlit
-
-### Containerization
-
-* Docker
-* Docker Compose
-
-### CI/CD
-
-* GitHub Actions
-* Self-Hosted GitHub Runner
-
-### Cloud
-
-* AWS EC2
+| Category | Technologies |
+|----------|--------------|
+| Programming | Python |
+| Machine Learning | Scikit-Learn, XGBoost |
+| Data Processing | Pandas, NumPy |
+| Database | MySQL |
+| Experiment Tracking | MLflow, DagsHub |
+| API Development | FastAPI |
+| Frontend | Streamlit |
+| Containerization | Docker, Docker Compose |
+| CI/CD | GitHub Actions, Self-Hosted Runner |
+| Cloud | AWS EC2 |
 
 ---
 
-## Project Structure
+# 📂 Project Structure
 
 ```text
 customer-churn-mlops
 │
-├── artifacts
-├── config
-├── logs
-├── notebooks
-├── src
-│   └── churn
-│       ├── components
-│       ├── config
-│       ├── constants
-│       ├── entity
-│       ├── pipeline
-│       ├── serving
-│       ├── frontend
-│       ├── utils
+├── artifacts/
+├── config/
+├── docker/
+├── logs/
+├── notebooks/
+├── src/
+│   └── churn/
+│       ├── components/
+│       ├── config/
+│       ├── constants/
+│       ├── entity/
+│       ├── pipeline/
+│       ├── serving/
+│       ├── frontend/
+│       ├── utils/
 │       ├── logger.py
 │       └── exception.py
 │
-├── docker
-├── .github
-│   └── workflows
+├── .github/
+│   └── workflows/
+├── docker-compose.yml
 ├── requirements.txt
 ├── setup.py
 ├── pyproject.toml
-└── docker-compose.yml
+└── README.md
 ```
 
 ---
 
-## Machine Learning Pipeline
+# ⚙️ Machine Learning Pipeline
 
-### Data Ingestion
+### 📥 Data Ingestion
 
-* Reads customer churn data
-* Stores raw dataset in artifacts
-
-### Data Validation
-
-* Schema validation
-* Missing value checks
-* Data quality verification
-
-### Data Transformation
-
-* Feature preprocessing
-* Numerical scaling
-* Categorical encoding
-
-### Model Training
-
-Models trained:
-
-* Logistic Regression
-* Random Forest
-* XGBoost
-
-### Model Evaluation
-
-Performance metrics:
-
-* Accuracy
-* Precision
-* Recall
-* F1 Score
+- Reads the IBM Telco Customer Churn dataset
+- Stores the raw dataset inside the artifacts directory
 
 ---
 
-## Best Performing Model
+### ✅ Data Validation
 
-| Model               | Test Accuracy | F1 Score |
-| ------------------- | ------------- | -------- |
-| Logistic Regression | 79.99%        | 0.618    |
-| Random Forest       | 80.48%        | 0.610    |
-| XGBoost             | 78.14%        | 0.573    |
-
-Selected Model: **Logistic Regression**
+- Schema validation
+- Missing value verification
+- Data quality checks
+- Dataset consistency verification
 
 ---
 
-## Experiment Tracking
+### 🔄 Data Transformation
 
-All experiments are tracked using:
-
-* MLflow
-* DagsHub
-
-Tracked artifacts:
-
-* Parameters
-* Metrics
-* Models
-* Training Runs
+- Data preprocessing
+- Feature engineering
+- Numerical feature scaling
+- Categorical feature encoding
 
 ---
 
-## API Endpoints
+### 🤖 Model Training
 
-### Health Check
+The following machine learning algorithms were trained and evaluated:
+
+- Logistic Regression
+- Random Forest
+- XGBoost
+
+---
+
+### 📊 Model Evaluation
+
+Evaluation Metrics:
+
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+
+---
+
+# 🏆 Model Performance
+
+| Model | Test Accuracy | F1 Score |
+|--------|--------------:|----------:|
+| Logistic Regression | **79.99%** | **0.618** |
+| Random Forest | 80.48% | 0.610 |
+| XGBoost | 78.14% | 0.573 |
+
+### ✅ Selected Model
+
+**Logistic Regression**
+
+---
+
+# 📈 Experiment Tracking
+
+The project uses **MLflow** integrated with **DagsHub** for experiment management.
+
+Tracked artifacts include:
+
+- Parameters
+- Metrics
+- Trained Models
+- Training Runs
+- Experiment History
+
+---
+
+# 🌐 REST API
+
+## Health Check
 
 ```http
 GET /
 ```
 
-Response:
+Response
 
 ```json
 {
-  "message": "Customer Churn API Running"
+    "message": "Customer Churn API Running"
 }
 ```
 
-### Prediction Endpoint
+---
+
+## Prediction Endpoint
 
 ```http
 POST /predict
 ```
 
-Upload customer data file and receive churn predictions.
+Users can upload customer datasets and receive churn predictions through the REST API.
 
 ---
 
-## Frontend Application
+# 💻 Streamlit Application
 
-The project includes a Streamlit-based user interface that allows users to:
+The project includes a user-friendly Streamlit interface that allows users to:
 
-* Upload customer datasets
-* Generate predictions
-* View churn results
+- Upload customer datasets
+- Generate churn predictions
+- View prediction results interactively
 
 ---
 
-## Dockerization
+# 🐳 Docker
 
-The application is fully containerized.
+The application is fully containerized using Docker.
 
-Containers:
+Services include:
 
-* FastAPI Service
-* Streamlit Service
+- FastAPI Backend
+- Streamlit Frontend
 
-Run locally:
+Run locally using:
 
 ```bash
 docker compose up --build -d
@@ -260,78 +271,82 @@ docker compose up --build -d
 
 ---
 
-## CI/CD Pipeline
+# 🔄 CI/CD Pipeline
 
-Deployment is automated using GitHub Actions.
-
-Workflow:
+The deployment pipeline is fully automated using GitHub Actions.
 
 ```text
 Developer Push
       │
       ▼
+GitHub Repository
+      │
+      ▼
 GitHub Actions
       │
       ▼
-Self-Hosted Runner
+Self-Hosted GitHub Runner
       │
       ▼
-Docker Build
+Docker Image Build
       │
       ▼
-Container Deployment
+Docker Compose Deployment
       │
       ▼
-AWS EC2
+AWS EC2 Server
 ```
 
 ---
 
-## AWS Deployment
+# ☁️ AWS Deployment
 
 Deployment Infrastructure:
 
-* AWS EC2
-* Docker Compose
-* Self-Hosted GitHub Runner
+- AWS EC2
+- Docker Compose
+- Self-Hosted GitHub Runner
 
-Public Services:
+Hosted Services:
 
-* FastAPI API
-* Streamlit Web Application
-
----
-
-## Key Features
-
-* Modular ML pipeline
-* Custom logging and exception handling
-* MySQL integration
-* MLflow experiment tracking
-* DagsHub integration
-* FastAPI serving layer
-* Streamlit frontend
-* Dockerized deployment
-* GitHub Actions CI/CD
-* AWS EC2 hosting
+- FastAPI Backend
+- Streamlit Web Application
 
 ---
 
-## Future Improvements
+# ✨ Key Features
 
-* Model Monitoring
-* Data Drift Detection
-* Automated Retraining
-* Kubernetes Deployment
-* AWS ECR/ECS Integration
-* Prometheus & Grafana Monitoring
+- Modular MLOps Architecture
+- End-to-End Machine Learning Pipeline
+- Custom Logging & Exception Handling
+- MySQL Integration
+- MLflow Experiment Tracking
+- DagsHub Integration
+- FastAPI REST API
+- Interactive Streamlit Dashboard
+- Dockerized Deployment
+- Automated CI/CD Pipeline
+- AWS EC2 Hosting
 
 ---
 
-## Author
+# 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# 👨‍💻 Author
 
 **Sudip Modak**
 
-MIS Analyst | Data Analyst | Aspiring Machine Learning Engineer
+**MIS Analyst | Data Analyst | Aspiring Machine Learning Engineer**
 
-GitHub: https://github.com/SudipModak
+📧 **LinkedIn:** *(Add your LinkedIn profile)*
+
+💻 **GitHub:** https://github.com/SudipModak
+
+---
+
+⭐ **If you found this project useful, consider giving it a Star!**
+````
