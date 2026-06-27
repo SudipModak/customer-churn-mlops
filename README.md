@@ -336,7 +336,7 @@ Hosted Services:
 
 **MIS Analyst | Data Analyst | Aspiring Machine Learning Engineer**
 
-📧 **LinkedIn:** *(Add your LinkedIn profile)*
+📧 **LinkedIn:** *https://www.linkedin.com/in/sudip-modak-6173a9283*
 
 💻 **GitHub:** https://github.com/SudipModak
 
